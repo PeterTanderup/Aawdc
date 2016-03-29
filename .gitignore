@@ -267,4 +267,4 @@ paket-files/
 
 # ImageProcessor DiskCache 
 **/App_Data/cache/
-# AarhusWebDevCoop/Web.config
+AarhusWebDevCoop/Web.config
