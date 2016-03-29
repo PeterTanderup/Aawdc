@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+	@* OrderBy() takes the property to sort by and optionally order desc/asc *@
+
+@foreach (var page in CurrentPage.Children.Where("Visible").OrderBy("CreateDate desc"))
+{
+    var isProtected = umbraco.library.IsProtected(page.id, page.path);
+    var loginAccess = umbraco.library.IsProtected(page.id, page.path) && umbraco.library.HasAccess(page.id, page.path);
+
+    if (!isProtected || loginAccess)
+    {
+        <div class="row">
+            <div class="col-lg-12"><a href="@page.Url">@page.Name</a></div>
+            <div class="col-lg-12">@Umbraco.Truncate(@page.ProjectDescription, 100) <a href="@page.Url">Read More..</a></div>
+        </div>
+        <hr />
+    }
+}

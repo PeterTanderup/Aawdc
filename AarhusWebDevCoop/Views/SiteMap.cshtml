@@ -1,0 +1,7 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "masterLayout.cshtml";
+}
+
+<h1>@Umbraco.Field("header")</h1>
+@Umbraco.RenderMacro("sitemapList")

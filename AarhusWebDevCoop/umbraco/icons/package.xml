@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+  <files>
+    <file>
+      <guid>package.manifest</guid>
+      <orgPath>/App_Plugins/BelleIconPack</orgPath>
+      <orgName>package.manifest</orgName>
+    </file>
+    <file>
+      <guid>ReadMe.txt</guid>
+      <orgPath>/App_Plugins/BelleIconPack</orgPath>
+      <orgName>ReadMe.txt</orgName>
+    </file>
+    <file>
+      <guid>whhg.css</guid>
+      <orgPath>/App_Plugins/BelleIconPack/css</orgPath>
+      <orgName>whhg.css</orgName>
+    </file>
+    <file>
+      <guid>webhostinghub-glyphs.eot</guid>
+      <orgPath>/App_Plugins/BelleIconPack/font</orgPath>
+      <orgName>webhostinghub-glyphs.eot</orgName>
+    </file>
+    <file>
+      <guid>webhostinghub-glyphs.svg</guid>
+      <orgPath>/App_Plugins/BelleIconPack/font</orgPath>
+      <orgName>webhostinghub-glyphs.svg</orgName>
+    </file>
+    <file>
+      <guid>webhostinghub-glyphs.ttf</guid>
+      <orgPath>/App_Plugins/BelleIconPack/font</orgPath>
+      <orgName>webhostinghub-glyphs.ttf</orgName>
+    </file>
+  </files>
+  <info>
+    <package>
+      <name>Belle Icon Pack</name>
+      <version>1.0.0</version>
+      <license url="http://www.opensource.org/licenses/mit-license.php">MIT license</license>
+      <url>http://our.umbraco.org/</url>
+      <requirements>
+        <major>3</major>
+        <minor>0</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Warren Buckley</name>
+      <website>http://creativewebspecialist.co.uk</website>
+    </author>
+    <readme><![CDATA[These icons are from Web Hosting Hub Icon Font
+http://www.webhostinghub.com/glyphs/
+https://github.com/whhglyphs/webhostinghub-glyphs]]></readme>
+  </info>
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+</umbPackage>

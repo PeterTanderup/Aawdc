@@ -1,0 +1,30 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+@{
+    var home = Model.Content.AncestorsOrSelf(1).First();
+}
+
+@helper Traverse(IPublishedContent node, int pad)
+{
+    var isProtected = umbraco.library.IsProtected(node.Id, node.Path);
+    var loginAccess = umbraco.library.IsProtected(node.Id, node.Path) && umbraco.library.HasAccess(node.Id, node.Path);
+    if (!isProtected || loginAccess)
+    {
+        <li>
+            <a href="@node.Url">@(!String.IsNullOrWhiteSpace(node.GetPropertyValue<string>("pageName")) ? node.GetPropertyValue<string>("pageName") : !String.IsNullOrWhiteSpace(node.GetPropertyValue<string>("pageTitle")) ? node.GetPropertyValue<string>("pageTitle") : node.Name)</a>
+
+            @if (node.Children.Any())
+            {
+            <ul class="disc">
+                @foreach (var n in node.Children.Where(n => !n.GetPropertyValue<bool>("hideFromSitemap")))
+                {
+                    @Traverse(n, pad + 8)
+                }
+            </ul>
+            }
+        </li>
+    }
+}
+<ul class="disc">
+    @Traverse(home, 0)
+</ul>
