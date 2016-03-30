@@ -50,6 +50,7 @@ namespace AarhusWebDevCoop.Controllers
             comment.SetValue("email", model.Email);
             comment.SetValue("subject", model.Subject);
             comment.SetValue("message", model.Message);
+            comment.SetValue("hideFromSitemap", true);
 
             Services.ContentService.SaveAndPublishWithStatus(comment);
 
