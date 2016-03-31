@@ -22,9 +22,11 @@ namespace AarhusWebDevCoop.Controllers
         [HttpPost]
         public ActionResult HandleFormSubmit(ContactFormViewModel model)
         {
-            // used to send mails
-
+            // check if the modelstate is valid if not return to the current page
             if (!ModelState.IsValid) { return CurrentUmbracoPage(); }
+
+            // used to send mails commented out ATM
+            #region send mail
             //MailMessage message = new MailMessage();
             //message.To.Add("peter@sirgal.dk");
             //message.Subject = model.Subject;
@@ -43,7 +45,9 @@ namespace AarhusWebDevCoop.Controllers
             //    // send mail
             //    smtp.Send(message);
             //}
+            #endregion
 
+            // used to create a document in the backoffice
             IContent comment = Services.ContentService.CreateContent(model.Subject, CurrentPage.Id, "Message");
 
             comment.SetValue("name", model.Name);

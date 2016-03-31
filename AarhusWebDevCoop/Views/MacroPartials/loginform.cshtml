@@ -13,6 +13,7 @@
     logoutModel.RedirectUrl = "/";
 }
 
+@*if user is not loged in show the login form, else show a log out form*@
 @if (!Members.GetCurrentLoginStatus().IsLoggedIn)
 {
     using (Html.BeginUmbracoForm<UmbLoginController>("HandleLogin"))
